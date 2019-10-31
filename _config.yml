@@ -14,8 +14,8 @@ people:
   pic: 1
   position: Sr. Cloud and BigData Architect
   social:
-    - title: github
-      url: nixsupport
+    #- title: github
+    #  url: nixsupport
     #- title: facebook
     #  url: #
     #- title: stack-overflow
