@@ -12,14 +12,14 @@ SQS, SNS, Azure, Kubernetes, Docker, Disaster Recovery, ETL Workflow and serverl
 people:
 - name: Balkaran Brar
   pic: 1
-  position: Consultant and Trainer
+  position: Sr. Cloud and BigData Architect
   social:
-    - title: twitter
-      url: karanb81
-    - title: facebook
-      url: #
-    - title: stack-overflow
-      url: #
+    - title: github
+      url: nixsupport
+    #- title: facebook
+    #  url: #
+    #- title: stack-overflow
+    #  url: #
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
