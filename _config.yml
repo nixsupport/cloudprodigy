@@ -1,0 +1,46 @@
+url: "https://www31.balkaranbrar.ca"
+baseurl: "/"
+
+# Site settings
+title: Balkaran Brar
+email: contact@balkaranbrar.ca
+description: "I am a certified AWS Solutions Architect and DevOps professional with over 15 years of experience. I have been working on AWS since 2009 and worked on number of projects including services like EMR, Hadoop, Spark, Step Functions, Lambda, 
+SQS, SNS, Azure, Kubernetes, Docker, Disaster Recovery, ETL Workflow and serverless and event driven architectures. I am also well versed in CI/CD pipelines and tools like Jenkins, TeamCity and Azure DevOps"
+
+
+# Team names, titles and social links
+people:
+- name: Balkaran Brar
+  pic: 1
+  position: Consultant and Trainer
+  social:
+    - title: twitter
+      url: karanb81
+    - title: facebook
+      url: #
+    - title: stack-overflow
+      url: #
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  - title: twitter
+    url: http://twitter.com/karanb81
+  - title: linkedin
+    url: https://www.linkedin.com/in/balkaranbrar/
+  - title: github
+    url: http://github.com/nixsupport
+
+# Postal address (add as many lines as necessary)
+address:
+  - line: 65 Oneida Crescent
+  - line: Richmond Hill, ON, Canada - L4B0G9
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+plugins:
+  - jekyll-paginate
+paginate: 5
+collections:
+  articles:
+    output: true

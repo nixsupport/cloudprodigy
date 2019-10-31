@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Balkaran Brar</title>
+    <description>I am a certified AWS Solutions Architect and DevOps professional with over 15 years of experience. I have been working on AWS since 2009 and worked on number of projects including services like EMR, Hadoop, Spark, Step Functions, Lambda, SQS, SNS, Azure, Kubernetes, Docker, Disaster Recovery, ETL Workflow and serverless and event driven architectures. I am also well versed in CI/CD pipelines and tools like Jenkins, TeamCity and Azure DevOps</description>
+    <link>http://0.0.0.0:4000/</link>
+    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 09 Sep 2019 09:08:49 -0500</pubDate>
+    <lastBuildDate>Mon, 09 Sep 2019 09:08:49 -0500</lastBuildDate>
+    <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>Kubernetes Dashboard SSO</title>
+        <description>
+</description>
+        <pubDate>Wed, 04 Sep 2019 00:00:00 -0500</pubDate>
+        <link>http://0.0.0.0:4000/devops/2019/09/04/kubernetes-sso/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/devops/2019/09/04/kubernetes-sso/</guid>
+        
+        
+        <category>DevOps</category>
+        
+      </item>
+    
+      <item>
+        <title>ETL Workflow</title>
+        <description>
+</description>
+        <pubDate>Wed, 17 Apr 2019 00:00:00 -0500</pubDate>
+        <link>http://0.0.0.0:4000/big%20data/2019/04/17/emr-stepfunctions/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/big%20data/2019/04/17/emr-stepfunctions/</guid>
+        
+        
+        <category>Big Data</category>
+        
+      </item>
+    
+      <item>
+        <title>Disaster Recovery</title>
+        <description>
+</description>
+        <pubDate>Mon, 18 Mar 2019 00:00:00 -0500</pubDate>
+        <link>http://0.0.0.0:4000/cloud%20architect/2019/03/18/disaster-recovery/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/cloud%20architect/2019/03/18/disaster-recovery/</guid>
+        
+        
+        <category>Cloud Architect</category>
+        
+      </item>
+    
+      <item>
+        <title>Docker-In-Docker</title>
+        <description>
+</description>
+        <pubDate>Wed, 13 Feb 2019 00:00:00 -0600</pubDate>
+        <link>http://0.0.0.0:4000/devops/2019/02/13/docker-in-docker/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/devops/2019/02/13/docker-in-docker/</guid>
+        
+        
+        <category>DevOps</category>
+        
+      </item>
+    
+      <item>
+        <title>CloudFormation Drift Remediation</title>
+        <description>
+</description>
+        <pubDate>Thu, 10 Jan 2019 00:00:00 -0600</pubDate>
+        <link>http://0.0.0.0:4000/detect%20&%20remove%20cloudformation%20drift/2019/01/10/cloudformation/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/detect%20&%20remove%20cloudformation%20drift/2019/01/10/cloudformation/</guid>
+        
+        
+        <category>Detect &amp; Remove CloudFormation Drift</category>
+        
+      </item>
+    
+      <item>
+        <title>Infrastructure Pipeline</title>
+        <description>
+</description>
+        <pubDate>Fri, 16 Nov 2018 00:00:00 -0600</pubDate>
+        <link>http://0.0.0.0:4000/devops/2018/11/16/infra-pipeline/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/devops/2018/11/16/infra-pipeline/</guid>
+        
+        
+        <category>DevOps</category>
+        
+      </item>
+    
+  </channel>
+</rss>

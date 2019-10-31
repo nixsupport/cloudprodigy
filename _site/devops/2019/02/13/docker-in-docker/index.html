@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Docker-In-Docker</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="I am a certified AWS Solutions Architect and DevOps professional with over 15 years of experience. I have been working on AWS since 2009 and worked on number of projects including services like EMR, Hadoop, Spark, Step Functions, Lambda, SQS, SNS, Azure, Kubernetes, Docker, Disaster Recovery, ETL Workflow and serverless and event driven architectures. I am also well versed in CI/CD pipelines and tools like Jenkins, TeamCity and Azure DevOps">
+    <link rel="canonical" href="http://0.0.0.0:4000/devops/2019/02/13/docker-in-docker/">
+
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+
+
+    <body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top ">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Balkaran Brar</a>
+        
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Services</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/articles/">Articles</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Certified Solutions Architect and DevOps Professional</div>
+                <div class="intro-heading">
+                    <img height=100 width=100 src="/img/aws-devops-pro.png">
+                    <img height=100 width=100 src="/img/aws-sa-pro.png">
+                    <img height=100 width=100 src="/img/aws-sa-a.png">
+                </div>
+                <a href="#services" class="page-scroll btn btn-xl">Know More</a>
+            </div>
+        </div>
+    </header>
+<!--
+        
+          
+        
+          <a class="page-link" href="/blog/">Blog</a>
+        
+          
+        
+          
+        
+          
+        
+          
+        
+ -->
+
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Services</h2>
+                    <!-- --><h3 class="section-subheading text-muted">I work with you for all kinds of training and consultation requirements for AWS and Azure cloud platforms</h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-cloud-upload fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Cloud Consulting</h4>
+                    <p class="text-muted">
+                        <ul style="text-align:left;font-family:Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;">
+                            <li>Requirement Gatehring and Detailed Analysis</li>
+                            <li>Customized Solutions</li>
+                            <li>Hybrid Cloud Environment Support</li>
+                            <li>Automated Disaster Recovery Implementation using Cloud Native Services</li>
+                            <li>Infrastructure Provisioning using Templates</li>
+                            <li>Event Driven and Serverless Design</li>
+                            <li>Continuous Maintenance and Support</li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Cloud Training</h4>
+                    <p class="text-muted">
+                        <ul style="text-align:left;font-family:Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;">
+                            <li>Online and On-site Trainings</li>
+                            <li>1x1 and Group Programs</li>
+                            <li>Scenario Based Training for Better Learning</li>
+                            <li>Complete Hands-On Sessions</li>
+                            <li>Certification Preparation For AWS & Azure Solutions Architect and DevOps Learning Paths</li>
+                            <li>Dedicated Slack Channel for Effective Communication</li>
+                            <li>Job Recommendations</li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Cloud Security</h4>
+                    <p class="text-muted">
+                        <ul style="text-align:left;font-family:Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;">
+                            <li>Grant Access using Completely Automated Process</li>
+                            <li>Auto Mitigation of Security Threats</li>
+                            <li>Detect Drifts and Automatically Revert Manual Changes</li>
+                            <li>Multiple Cloud Accounts Based On Best Practices</li>
+                            <li>Highly Scalable and Secure Environments</li>
+                            <li>Setup Redundant Firewalls in Cloud</li>
+                            <li>Centralized Logging and Monitoring Solutions</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Portfolio</h2>
+                    <h3 class="section-subheading text-muted">Some of my latest projects...</h3>
+                </div>
+            </div>
+            <div class="row">
+            
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-eye fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/kubernetes-sso-dashboard-thumbnail.png" class="img-responsive img-centered" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Kubernetes Dashboard SSO</h4>
+                        <p class="text-muted">DevOps</p>
+                    </div>
+                </div>
+            
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-eye fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/etl-step-functions-emr-thumbnail.png" class="img-responsive img-centered" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>ETL Workflow</h4>
+                        <p class="text-muted">Big Data</p>
+                    </div>
+                </div>
+            
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-eye fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/disaster-recovery-thumbnail.png" class="img-responsive img-centered" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Disaster Recovery</h4>
+                        <p class="text-muted">Cloud Architect</p>
+                    </div>
+                </div>
+            
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-eye fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/docker-in-docker-thumbnail.png" class="img-responsive img-centered" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Docker-In-Docker</h4>
+                        <p class="text-muted">DevOps</p>
+                    </div>
+                </div>
+            
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-eye fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/cloudformation-remediation-template.png" class="img-responsive img-centered" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>CloudFormation Drift Remediation</h4>
+                        <p class="text-muted">Cloud Architect</p>
+                    </div>
+                </div>
+            
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-eye fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/infra-pipeline-thumbnail.png" class="img-responsive img-centered" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Infrastructure Pipeline</h4>
+                        <p class="text-muted">DevOps</p>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">About</h2>
+                    <h3 class="section-subheading text-muted">A glimpse at my professional journey so far...</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="timeline">
+                        <li>
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>2005-2009</h4>
+                                    <h4 class="subheading">Initial Struggle and Learning</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Started my career in 2005 as a Linux and Network Administrator. Although I had certifications like RHCE and CCNA, working in real world was totally a different experience.
+                                        I started off with LAMP based environments where I had to troubleshoot configurations of Apache and MySQL in addition to Linux. At times I also had to dig in to PHP code to troubleshoot issues.
+                                        That helped to build an overall understanding about web apps running on Linux environments. I struggled a lot but I'm happy with the reward of that struggle I did. That helped to build a strong foundation for my future.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="img/about/2.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>2009</h4>
+                                    <h4 class="subheading">First Face Off with AWS Cloud</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">I got a chance to work on AWS in 2009 and the first project I built was a postfix cluster running on bunch of EC2 instances. Believe me it was so much hard to manage EC2 instances running with only ephemeral storage. However, it was a unique experience. Instead of setting up new physical boxes, I was able to spin a VM in a few minutes. That was fascinating.
+
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="img/about/3.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>2011</h4>
+                                    <h4 class="subheading">Got a Big Break</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">I joined Emerson Electric Co. in 2011 where I spent 7.5 years of my career. I learned a lot, not just new technologies but also other aspects of life. A big shout out to my manager and mentor Mike Mantle for his continuous support.
+                                        I got a chance to work on Middlware projects where I setup clusters of Oracle WebLogic Server supporting SOA, OSB and ADF projects. I also setup IBM MQ servers and build CI/CD pipelines to automate the deployment of these projects.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="img/about/4.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>2011-2017</h4>
+                                    <h4 class="subheading">Evolved as a Cloud Architect</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">I worked with many clients specifically on AWS. Every project was a new challenge with some custom requirements. That helped to sharpen my skills and start architecting solutions effectively.
+                                        Being an Architect, you have to visualize different components working together and then should also know how to stitch those components. A unique requirement everytime helped me to understand the AWS cloud eco system in depth.
+                            
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                                <div class="timeline-image">
+                                    <img class="img-circle img-responsive" src="img/about/5.jpg" alt="">
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4>2018</h4>
+                                        <h4 class="subheading">Moved to Canada</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p class="text-muted">It was my personal milestone achieved in 2018 when I moved to Toronto. It's been great to see people of different religions and beliefs in such a diverse environment. I got some exciting opportunities here which gave me a boost to excel in my career.</p>
+                                    </div>
+                                </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <h4>Be Part
+                                    <br>Of My
+                                    <br>Story!</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <!-- Team Section
+    <section id="team" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Our Amazing Team</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row">
+                
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="img/team/1.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Balkaran Brar</h4>
+                        <p class="text-muted">Consultant and Trainer</p>
+                        <ul class="list-inline social-buttons">
+                            
+                            <li>
+                                <a href="karanb81">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="">
+                                    <i class="fa fa-stack-overflow"></i>
+                                </a>
+                            </li>
+                            
+
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+-->
+    <!-- Clients Aside 
+    <aside class="clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="img/logos/envato.jpg" class="img-responsive img-centered" alt="">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="img/logos/designmodo.jpg" class="img-responsive img-centered" alt="">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="img/logos/themeforest.jpg" class="img-responsive img-centered" alt="">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="img/logos/creative-market.jpg" class="img-responsive img-centered" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </aside>
+--> -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Contact Me</h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="control-group form-group">
+                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group form-group">
+                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group form-group">
+                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="control-group form-group">
+                                    <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button type="submit" class="btn btn-xl">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Balkaran Brar 2019</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        
+                        <li><a href="http://twitter.com/karanb81"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        
+                        <li><a href="https://www.linkedin.com/in/balkaranbrar/"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                        
+                        <li><a href="http://github.com/nixsupport"><i class="fa fa-github"></i></a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="#"></a>
+                        </li>
+                        <li><a href="#"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+     <!-- Portfolio Modals -->
+ 
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Kubernetes Dashboard SSO</h2>
+                            <hr class="star-primary">
+                            <img src="img/portfolio/kubernetes-sso-dashboard.png" class="img-responsive img-centered" alt="Kubernetes Dashboard SSO">
+                            <p>This solution was implemented to access Kubernetes Dashboard via OpenID provider in Amazon EKS. There is no out of the box solution exist. It was achieved using openresty proxy deployed in EKS.</p>
+                            <ul class="list-inline item-details">
+                                <li>Services:
+                                    <strong style="color:orange">Amazon EKS
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong style="color:orange">September 2019
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong style="color:orange">DevOps
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>ETL Workflow</h2>
+                            <hr class="star-primary">
+                            <img src="img/portfolio/etl-step-functions-emr.png" class="img-responsive img-centered" alt="ETL Workflow">
+                            <p>This solution was designed for ETL workflow. AWS StepFunction service was used to orchestrate the workflow. It gets triggered by a time based CloudWatch event rule. Once trigger, initial scripts are executed on EC2. On successful execution, a parallel job started within StepFunction. As a result of which EMR cluster is launched and then Step are executed. Appropriate status checks are implemented with "Wait" tasks in Step Functions.</p>
+                            <ul class="list-inline item-details">
+                                <li>Services:
+                                    <strong style="color:orange">EMR, CloudFormation, Lambda, Step Functions
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong style="color:orange">April 2019
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong style="color:orange">Big Data
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Disaster Recovery</h2>
+                            <hr class="star-primary">
+                            <img src="img/portfolio/disaster-recovery.png" class="img-responsive img-centered" alt="Disaster Recovery">
+                            <p>This solution was implemented to automated the DR process. Daily EBS snapshots being taken everyday using AWS Backup service. All EBS volumes are tagged with mount point and instance id. In the event of failure, a new instance is launched, all the snapshots for original instance are pulled from Backup service, volumes are created and attached with the new instance based on the mount point tags.</p>
+                            <ul class="list-inline item-details">
+                                <li>Services:
+                                    <strong style="color:orange">AWS Backup, DynamoDB, Lambda, Step Functions
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong style="color:orange">December 2018
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong style="color:orange">Cloud Architect
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Docker-In-Docker</h2>
+                            <hr class="star-primary">
+                            <img src="img/portfolio/docker-in-docker.png" class="img-responsive img-centered" alt="Docker-In-Docker">
+                            <p>This solution consolidates the build agents required for Azure DevOps Build and Release pipelines. Agents run inside EKS with docker installed in order to communicate with ECR. Build Agents running in EKS have docker container running as a side-car in same pod so that instead of mounting EKS host volume for docker client, it is actually referred to side container over TCP.</p>
+                            <ul class="list-inline item-details">
+                                <li>Services:
+                                    <strong style="color:orange">Amazon EKS, Docker, Azure DevOps
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong style="color:orange">February 2019
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong style="color:orange">DevOps
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>CloudFormation Drift Remediation</h2>
+                            <hr class="star-primary">
+                            <img src="img/portfolio/cloudformation-remediation.png" class="img-responsive img-centered" alt="Detect & Remove CloudFormation Drift">
+                            <p>This solution provisions IAM roles and policies using CloudFormation templates. In addition to that, if anyone manually edits the role, the drift will be detected and changes will be removed automatically.</p>
+                            <ul class="list-inline item-details">
+                                <li>Services:
+                                    <strong style="color:orange">CloudWatch Events, Lambda
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong style="color:orange">January 2019
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong style="color:orange">Detect & Remove CloudFormation Drift
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Infrastructure Pipeline</h2>
+                            <hr class="star-primary">
+                            <img src="img/portfolio/infra-pipeline.png" class="img-responsive img-centered" alt="Infrastructure Pipeline">
+                            <p>This implementation allows deployment of CloudFormation templates using CodePipeline. Engineers check-in the templates in CodeCommit which triggers the Pipeline. In Build stage, template syntax is validated using cfn-lint followed by security validation using cfn-nag. It reports if permissions are too permissive and fails the build in that case. Next stage is called Approval where anyone from designed set of individuals reviews and approves the change. In Deploy stage, templates are pushed to S3 first and then deployed using CloudFormation as Nested Stacks.</p>
+                            <ul class="list-inline item-details">
+                                <li>Services:
+                                    <strong style="color:orange">CloudFormation, CodeBuild, CodePipeline, CodeCommit, S3
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong style="color:orange">November 2018
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong style="color:orange">DevOps
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <!-- jQuery Version 1.11.0 -->
+    <script src="/js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/classie.js"></script>
+    <script src="/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="/js/jqBootstrapValidation.js"></script>
+    <script src="/js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/agency.js"></script>
+
+
+    </body>
+</html>

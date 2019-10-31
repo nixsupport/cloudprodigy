@@ -1,0 +1,9 @@
+version: "3"
+services:
+  agency:
+    image: "jekyll/jekyll"
+    command: bash -c 'jekyll serve --force_polling'
+    volumes:
+      - c:/code/agency:/srv/jekyll
+    ports:
+      - 4000:4000

@@ -1,0 +1,42 @@
+---
+layout: article
+---
+<!--
+{% for item in site.articles %}
+  <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
+  <p style="font-family:Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;">{{ item.description }}</p>
+  <a href="{{ item.url }}"><img src="/img/articles/{{ item.featured_img }}" width=40% height=40%></a>
+  <hr>
+{% endfor %}
+-->
+<!-- Portfolio Grid Section -->
+<section id="portfolio" class="bg-light-gray">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12 text-center">
+              <h2 class="section-heading">Articles</h2>
+             <h3 class="section-subheading text-muted"></h3>
+          </div>
+      </div>
+      <div class="row">
+      {% for item in site.articles %}
+          <div class="col-md-4 col-sm-6 portfolio-item">
+              <a href="{{ item.url }}" class="portfolio-link" data-toggle="modal">
+                  <div class="portfolio-hover">
+                      <div class="portfolio-hover-content">
+                          <i class="fa fa-eye fa-3x"></i>
+                      </div>
+                  </div>
+                  <img src="/img/articles/{{ item.featured_img }}" class="img-responsive img-centered" alt="">
+              </a>
+              <!--
+              <div class="portfolio-caption">
+                  <h4>{{ item.title }}</h4>
+                  <p class="text-muted">{{ item.title }}</p>
+              </div>
+            -->
+          </div>
+      {% endfor %}
+      </div>
+  </div>
+</section>
