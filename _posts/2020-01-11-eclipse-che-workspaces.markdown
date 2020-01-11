@@ -1,5 +1,5 @@
 ---
-title: Eclipse Che Workspaces - EKS
+title: Eclipse Che Workspaces
 subtitle: Cloud Architect
 layout: default
 modal-id: 11
