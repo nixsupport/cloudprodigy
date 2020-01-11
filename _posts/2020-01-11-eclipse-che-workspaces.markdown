@@ -5,7 +5,7 @@ layout: default
 modal-id: 11
 date: 2020-01-11
 img: eclipse-che-eks.jpg
-thumbnail: eclipse-che-eks-thumbnail.png
+thumbnail: eclipse-che-eks-thumbnail.jpg
 alt: Eclipse Che Workspaces on EKS
 project-date: January 2020
 client: Numerix
